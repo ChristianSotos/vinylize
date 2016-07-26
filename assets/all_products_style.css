@@ -1,0 +1,24 @@
+body{
+
+}
+#main-content{
+	width: 70%;
+	margin: auto;
+}
+.albums{
+	display: inline-block;
+	width: 20%;
+	margin: 1%;
+	padding: 1%;
+	text-align: center;
+}
+.albums h1, h4{
+	display: block;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+.albums img{
+	display: inline-block;
+	width: 100%;
+}
