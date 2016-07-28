@@ -1,0 +1,105 @@
+#show-album{
+	display: inline-block;
+	width: 75%;
+	vertical-align: top;
+}
+#album-player-art{
+	display: inline-block;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+#album-art{
+	width: 100%;
+	vertical-align: top;
+}
+#album-art img{
+	vertical-align: top;
+	display: inline-block;
+	width: 100%;
+}
+iframe{
+	display: inline-block;
+	width: 100%;
+	height: 80px;
+	vertical-align: top;
+	margin: 0;
+}
+#player-div{
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+	margin-top: 0;
+}
+#player-div h1, h2, h4{
+	margin: 0;
+	padding: 0;
+}
+#buy-div{
+	float: right;
+}
+#tracklist{
+	padding-left: 0;
+}
+#tracklist li{
+	display: block;
+}
+#tracklist h4{
+	display: inline-block;
+	margin: 0 1%;
+}
+
+#side-content{
+	display: inline-block;
+	width: 20%;
+	margin: 0;
+	margin-right: 4%;
+	text-align: center;
+	float: right;
+}
+#side-content h3{
+	margin-top: 0;
+}
+#side-content h4{
+	margin: 0;
+	padding: 0;
+}
+#side-content img{
+	display: inline-block;
+	margin: 2%;
+	width: 60%;
+}
+.related-artists{
+	margin-bottom: 5%;
+}
+
+#bottom-content{
+	display: inline-block;
+	width: 75%;
+	margin: 0;
+	vertical-align: top;
+	text-align: center;
+}
+.other-albums{
+	vertical-align: top;
+	width: 15%;
+	margin: 2%;
+	display: inline-block;
+}
+#bottom-content h3{
+	margin-top: 3%;
+}
+#bottom-content p{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#bottom-content img{
+	display: inline-block;
+	margin: 2%;
+	width: 100%;
+}
+
+

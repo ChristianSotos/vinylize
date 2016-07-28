@@ -55,12 +55,17 @@ Class Orders extends CI_Controller{
 		$this->load->view("/admin_partials/orders_table", $data);
 	}
 
+
 	function change_orders_ship_status($ship_status, $order_id)
 	{
 		$data['new_ship_status'] = $ship_status;
 		$data['order_id'] = $order_id;
 		$this->order->change_orders_ship_status($data);
 		redirect('/orders');
+	}
+
+	function add_order(){
+		
 	}
 }
 ?>
