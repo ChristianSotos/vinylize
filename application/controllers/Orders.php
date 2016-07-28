@@ -22,8 +22,6 @@ Class Orders extends CI_Controller{
 		else {
 			$data['search'] = $search;
 		}
-		
-
 		//set ship status	
 		if ($ship_status == 'Show%20All') {
 			$data['ship_status'] = 0;

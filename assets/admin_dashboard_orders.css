@@ -77,7 +77,7 @@
 	text-align: center;
 }
 
-#orders_table {
+table {
 	width: 80%;
 	margin: auto;
 	background-color: #eee;

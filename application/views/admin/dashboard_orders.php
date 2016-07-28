@@ -99,15 +99,14 @@
 			})
 		});
 	</script>
-
 </head>
 <body>
 	<div id="container">
 		<div id="header">
 			<h1>Admin Dashboard</h1>
-			<h2><a href="">Orders</a></h2>
-			<h2><a href="">Products</a></h2>
-			<h2><a href="">Log Off</a></h2>
+			<h2><a href="/orders">Orders</a></h2>
+			<h2><a href="/products/admin_dashboard">Products</a></h2>
+			<h2><a href="/users/logout">Log Off</a></h2>
 		</div>
 		<div id="filters">
 			<form>
