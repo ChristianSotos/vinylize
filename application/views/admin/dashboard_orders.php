@@ -10,7 +10,7 @@
 			$('#current_page_number').val(0);
 			var page = $('#current_page_number').val();
 			var url = "/orders/get_all_orders/"+page+"/"+ship_status+"/"+search;
-			console.log(url); 
+			console.log(url);
 			$.ajax({
 				url: url,
 				type: "GET",

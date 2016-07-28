@@ -9,7 +9,7 @@
 		<th>Status</th>
 	</thead>
 	<tbody>
-<?php  
+<?php
 	foreach ($orders as $order) {
 ?>
 		<tr>
@@ -38,24 +38,19 @@
 					<option value="3" <?=$cancelled?> >Cancelled</option>
 				</select>
 			</td>
-		</tr>			
-<?php 
-	} 
+		</tr>
+<?php
+	}
 ?>
 	</tbody>
 </table>
 <ul id="page_number_list">
 	<li>Back</li>
 <?php for ($i=($this->session->userdata('page_number')+1); $i <= ($this->session->userdata('page_number')+5); $i++) {
-?>	
+?>
 	<li><?=$i?></li>
-<?php  
+<?php
 	}
 ?>
 	<li>Next</li>
 </ul>
-
-
-
-
-
