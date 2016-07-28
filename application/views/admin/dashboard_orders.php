@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>Orders Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/assets/admin_dashboard_orders.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
