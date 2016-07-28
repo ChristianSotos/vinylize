@@ -1,0 +1,27 @@
+#page_number_list {
+	list-style: none;
+	margin-left: 150px;
+}
+	#page_number_list li {
+		display: inline;
+		margin: 0px 5px;
+	}
+
+#page_number {
+	display: hidden;
+}
+
+h1, h2 {
+	display: inline-block;
+	margin: 20px 10px 50px 10px;
+
+}
+
+#orders_table {
+	border: 2px red solid;
+	background-color: #eee;
+	padding: 20px;
+}
+th, td {
+	padding: 10px;
+}
