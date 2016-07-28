@@ -1,24 +1,72 @@
 body{
 
 }
+#main-content, #side-content{
+	height: 65%;
+}
 #main-content{
-	width: 70%;
-	margin: auto;
+	width: 65%;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	vertical-align: top;
 }
 .albums{
 	display: inline-block;
-	width: 20%;
-	margin: 1%;
+	max-width: 20%;
+	max-height: 30%;
+	margin: 2% 1%;
 	padding: 1%;
 	text-align: center;
-}
-.albums h1, h4{
-	display: block;
 	vertical-align: top;
+}
+.albums h4, p{
+	display: block;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.albums p{
+	font-size: 0.8em;
+}
+.albums img{
+	vertical-align: top;
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+}
+#side-content{
+	display: inline-block;
+	width: 30%;
+	margin: 2%;
+	text-align: center;
+}
+#side-content h3{
+	margin-top: 0;
+}
+#side-content h4{
 	margin: 0;
 	padding: 0;
 }
-.albums img{
+#side-content img{
 	display: inline-block;
-	width: 100%;
+	margin: 2%;
+	max-width: 35%;
+	max-height: 20%;
+}
+.related-artists{
+	margin-bottom: 5%;
+}
+form p{
+	display: inline-block;
+}
+#page-div{
+	text-align: center;
+}
+#page-div h4{
+	display: inline-block;
+	margin: 0;
+	margin-left: 5%
 }

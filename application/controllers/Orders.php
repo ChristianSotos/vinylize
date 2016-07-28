@@ -17,5 +17,8 @@ Class Orders extends CI_Controller{
 		$data['orders'] = $orders;
 		$this->load->view("/admin_partials/orders_table", $data);
 	}
+	function add_order(){
+		
+	}
 }
 ?>
