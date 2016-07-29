@@ -22,6 +22,7 @@
 ?>	</tbody>
 </table>
 <ul id="page_number_list">
+	<li>First</li>
 	<li>Back</li>
 <?php for ($i=($this->session->userdata('page_number')+1); $i <= ($this->session->userdata('page_number')+5); $i++) {
 ?>	

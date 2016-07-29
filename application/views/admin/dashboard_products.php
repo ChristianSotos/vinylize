@@ -22,8 +22,12 @@
 
 		//pagination
 		$(document).on('click', 'li', function(){
+			if ($(this).html() == 'First') {
+				$('#current_page_number').val(0);
+				var page = $('#current_page_number').val();
+			}
 			//back button -> set page
-			if ($(this).html() == 'Back') {
+			else if ($(this).html() == 'Back') {
 				if ($('#current_page_number').val() == 0) {
 					var page = $('#current_page_number').val();
 				} else {
@@ -78,12 +82,7 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1>Admin Dashboard</h1>
-			<h2><a href="/orders">Orders</a></h2>
-			<h2><a href="/products/admin_dashboard">Products</a></h2>
-			<h2><a href="/users/logout">Log Off</a></h2>
-		</div>
+		<?php $this->load->view('admin_partials/admin_header') ?>
 		<div id="filters">
 			<form>
 				<input name="search" id="search_bar" type="text" placeholder="Search Products">

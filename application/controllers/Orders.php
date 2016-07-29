@@ -1,6 +1,6 @@
-<?php 
+<?php
 Class Orders extends CI_Controller{
-	
+
 	function __construct(){
 		parent::__construct();
 		$this->load->model('user');
@@ -22,7 +22,7 @@ Class Orders extends CI_Controller{
 		else {
 			$data['search'] = $search;
 		}
-		//set ship status	
+
 		if ($ship_status == 'Show%20All') {
 			$data['ship_status'] = 0;
 		}
@@ -35,10 +35,18 @@ Class Orders extends CI_Controller{
 		elseif ($ship_status == 'Cancelled') {
 			$data['ship_status'] = 3;
 		}
-		
+
+		//compare $page to page number in session
+		if ($page == 0) {
+			$this->session->set_userdata('page_number', 0);
+		}
+		else {
+			$new_page_number = $page / 5;
+			$this->session->set_userdata('page_number', $new_page_number);
+		}
 		$data['page_number'] = $page;
 		$orders = $this->order->get_all_orders($data);
-		
+
 		$data['orders'] = $orders;
 		$this->load->view("/admin_partials/orders_table", $data);
 	}
@@ -63,7 +71,21 @@ Class Orders extends CI_Controller{
 	}
 
 	function add_order(){
-		
+
+	}
+
+
+	function show($id){
+		$num =intval($id);
+		$data['id'] = $id;
+		$order = $this->order->get_order($data);
+		$info = $this->order->get_info($data);
+		// var_dump($order); die();
+		$data = array(
+			'order'=> $order,
+			'info'=>$info
+		);
+		$this->load->view("/admin/show_product", $data);
 	}
 }
 ?>

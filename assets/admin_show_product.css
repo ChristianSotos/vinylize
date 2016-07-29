@@ -1,0 +1,55 @@
+#container {
+	width: 90%;
+	height: 90%;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+#main_background {
+	margin-top: 1em;
+	background: url('https://i.ytimg.com/vi/IUDfxGZ6pPI/maxresdefault.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	padding: 2em .5em;
+	display: inline-block;
+}
+
+
+#order_info {
+	background-color: #eee;
+	width: 20%;
+	font-size: 1em;
+	padding: 1em;
+	display: inline-block;
+	margin-left: 2em;
+	margin-bottom: 1em;
+}
+
+table {
+	width: 90%;
+	margin: 2em auto;
+	background-color: #eee;
+	padding: 1em;
+	text-align: center;
+	border-collapse: collapse;
+/*	display: inline;*/
+}
+th, td {
+	padding: 10px;
+	border: 2px solid white;
+}
+
+#shipping_status {
+	display: inline-block;
+	vertical-align: top;
+	background-color: #eee;
+	width: 60%;
+	font-size: 1em;
+	padding: 1em;
+	text-align: center;
+	margin-left: 5em;
+	overflow: scroll;
+	margin-bottom: 10em;
+}

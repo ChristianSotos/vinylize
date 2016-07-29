@@ -4,31 +4,9 @@
 	text-align: right;
 }
 
-#header {
-	background-color: rgb(60,60,60);
-	width: 100%;
-	text-align: right;
-	padding: .50em;
-}
-	#header h1, h2{
-		display: inline-block;
-		font-weight: lighter;
-	}
-	#header h1{
-		color: white;
-		margin: 20px;
-		font-size: 24px;
-		float: left;
-	}
-	#header a{
-		color: #A1A1A1;
-		margin: 10px 20px;
-		font-size: .75em;
-		text-align: right;
-	}
-
 #filters {
 	background-color: #A1A1A1;
+	background: linear-gradient(to right, #eee , #A1A1A1, #eee);
 	width: 100%;
 	padding: 1em .5em;
 	vertical-align: top;
@@ -44,6 +22,8 @@
 	width: 250px;
 	font-size: 1em;
 	margin-right: 1em;
+	background: linear-gradient(to right, white, #eee, white);
+	color: #A1A1A1;
 }
 #ship_status_all {
 	width: 200px;
@@ -52,9 +32,8 @@
 
 #page_number_list {
 	list-style: none;
-	background-color: #eee;
-/*	border-radius: 5%;*/
-	margin: 1em 0em;
+	background: #A1A1A1;
+	margin: 1em 0em 8em 0em;
 	padding: .5em;
 	display: inline-block;
 }
@@ -68,7 +47,7 @@
 }
 
 #orders {
-	background-color: rgb(60,60,60);
+	background: rgb(60,60,60);
 	background-image: url('https://i.ytimg.com/vi/IUDfxGZ6pPI/maxresdefault.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -80,10 +59,12 @@
 table {
 	width: 80%;
 	margin: auto;
+	background: linear-gradient(to right, #eee , #A1A1A1, #eee);
 	background-color: #eee;
 	padding: 20px;
 	text-align: center;
 	border-collapse: collapse;
+	overflow: scroll;
 }
 th, td {
 	padding: 10px;
