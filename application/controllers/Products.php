@@ -56,5 +56,23 @@ Class Products extends CI_Controller{
 		$data['cart'] = $this->session->userdata('cart');
 		$this->load->view('user/cart', $data);
 	}
+
+	function admin_dashboard(){
+		$this->load->view('/admin/dashboard_products');
+	}
+
+	function get_all_products($page, $search=null){
+
+		if ($search == "") {
+			$data['search'] = null;
+		}
+		else {
+			$data['search'] = $search;
+		}
+		$data['page_number'] = $page;
+		$products = $this->product->get_all_products($data);
+		$data['products'] = $products;
+		$this->load->view('/admin_partials/products_table', $data);
+	}
 }
 ?>
