@@ -80,18 +80,15 @@
 					success: function(serverData){
 						
 						$('#bottom-content').append('<h3>Other Albums By This Artist</h3>');
-						for(var i=0, count=0; count < 5 && i < 20 ; i++){
-							var count = 0;
+						for(var i=0; i < 5 ; i++){
 							var src = serverData.albums.items[i].href;
 							$.get(src, function(res){
 								if (res.id == album_info['id'] || res.artists[0].id != artist_id){
 									i --;
 								} else{
 									$('#bottom-content').append("<div class='other-albums'><a href='/products/show_product/"+res.id+"'><img src='"+res.images[0].url+"' id='"+res.id+"'></a><p>"+res.name+"</p></div>");
-									add_to_count();
 								}
 							})
-							console.log(count);
 						}
 					}//success function
 				})//end other albums

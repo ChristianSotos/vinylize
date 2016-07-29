@@ -1,12 +1,15 @@
 <style>
 	#header{
 		background-color: black;
+		background: linear-gradient(to left, black, dimgrey);
 		color: white;
 		list-style-type: none;
 		padding: 1%;
 		border: 3px groove silver;
 		border-radius: 1em;
 		text-align: right;
+		position: static;
+		top: 0;
 	}
 	#header li{
 		display: inline-block;
