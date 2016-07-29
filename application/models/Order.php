@@ -60,7 +60,34 @@ Class Order extends CI_Model{
 		$this->db->query($query);
 	}
 
+	function add_order($user_id, $ship_info, $cart){
+		$ship_query = "INSERT INTO addresses (address,city,state,zip,created_at,updated_at) VALUES (?,?,?,?,NOW(),NOW())";
+		$ship_values = array($ship_info['address'], $ship_info['city'], $ship_info['state'], $ship_info['zipcode']);
+		$this->db->query($ship_query, $ship_values);
+		$ship_id = $this->db->insert_id();
 
+		$order_query = "INSERT INTO orders (created_at,updated_at,user_id,address_id,ship_status_id) VALUES (NOW(),NOW(),?,?,2)";
+		$order_values = array($user_id, $ship_id);
+		$this->db->query($order_query, $order_values);
+		$order_id = $this->db->insert_id();
+
+		foreach($cart as $product){
+			$unique_check = $this->db->query("SELECT * FROM products WHERE spotify_id = '".$product['id']."'")->row_array();
+			
+			if($unique_check == null){
+				$product_query = "INSERT INTO products (spotify_id,name,artist,price,created_at) VALUES (?,?,?,?,NOW())";
+				$product_values = array($product['id'], $product['name'], $product['artist'], $product['price']);
+				$this->db->query($product_query, $product_values);
+				$product_id = $this->db->insert_id();
+			} else{
+				$product_id = $unique_check['id'];
+			}
+
+			$op_query = "INSERT INTO order_products (order_id, product_id) VALUES (?,?)";
+			$op_values = array($order_id, $product_id);
+			$this->db->query($op_query, $op_values);
+		}
+	}
 
 }
 ?>

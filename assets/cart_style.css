@@ -1,0 +1,46 @@
+body{
+	background-color: black;
+	color: white;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	text-align: center;
+}
+#cart-div table{
+	border: 4px outset silver;
+	margin: 0 auto;
+	border-collapse: collapse;
+	text-align: center
+}
+#cart-div td, th{
+	border: 1px groove white;
+	padding: 1em;
+}
+#payment-div{
+	display: inline-block;
+	margin: 5% auto;
+}
+#shipping-div{
+	padding: 2em;
+	border: 6px double silver;
+	border-radius: 4em;
+	text-align: right;
+}
+#shipping-div input{
+	margin-left: 1em;
+}
+tr:nth-child(even){
+	background-color: grey;
+}
+tr:nth-child(odd){
+	color: black;
+	background-color: silver;
+}
+th{
+	color: white;
+	background-color: dimgrey;
+}
+tfoot td{
+	border: none;
+	color: black;
+	background-color: lightgrey;
+
+}

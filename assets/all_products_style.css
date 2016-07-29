@@ -1,24 +1,46 @@
 body{
-
-}
-#main-content, #side-content{
-	height: 65%;
+	background-color: black;
+	color: white;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 #main-content{
-	width: 65%;
+	width: 75%;
 	margin: 0;
 	padding: 0;
 	display: inline-block;
 	vertical-align: top;
+	border: 1px solid black;
+}
+#search-bar{
+	float: left;
+}
+form{
+	margin: 0 5%;
+}
+form p{
+	display: inline-block;
+}
+form input{
+	border: 2px groove silver;
+	border-radius: 10px;
+}
+#page-search{
+	text-align: left;
+}
+#page-search h4{
+	display: inline-block;
+	margin: 0;
+	margin-left: 2%;
 }
 .albums{
 	display: inline-block;
 	max-width: 20%;
-	max-height: 30%;
-	margin: 2% 1%;
-	padding: 1%;
+	margin: 1% 2.5%;
 	text-align: center;
 	vertical-align: top;
+}
+.albums img:hover{
+	border-radius: 100%;
 }
 .albums h4, p{
 	display: block;
@@ -36,12 +58,14 @@ body{
 	display: inline-block;
 	width: 100%;
 	margin: 0;
+	border-radius: 5px;
 }
 #side-content{
 	display: inline-block;
-	width: 30%;
-	margin: 2%;
+	width: 20%;
+	margin: 1%;
 	text-align: center;
+	border: 1px solid black;
 }
 #side-content h3{
 	margin-top: 0;
@@ -53,20 +77,10 @@ body{
 #side-content img{
 	display: inline-block;
 	margin: 2%;
-	max-width: 35%;
-	max-height: 20%;
+	width: 70%;
+	border-radius: 100%;
+
 }
 .related-artists{
 	margin-bottom: 5%;
-}
-form p{
-	display: inline-block;
-}
-#page-div{
-	text-align: center;
-}
-#page-div h4{
-	display: inline-block;
-	margin: 0;
-	margin-left: 5%
 }

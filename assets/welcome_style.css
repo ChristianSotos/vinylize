@@ -1,0 +1,65 @@
+body{
+	background-color: black;
+	color: white;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+#container{
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	background-image: url('/assets/pics/VINYL.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+#center-div{
+	display: inline-block;
+	height: 100%;
+}
+#login-div{
+	padding-top: 190%;
+}
+#reg-div{
+	padding-top: 160%;
+}
+
+#login-div, #reg-div{
+	display: inline-block;
+}
+#login-form, #reg-form{
+	text-align: left;
+	margin: 0;
+}
+p{
+	vertical-align: bottom;
+}
+p input{
+	margin-left: 1em;
+	float: right;
+	height: 1.8em;
+	border-radius: 0.5em;
+}
+button{
+	float: left;
+	margin-top: 0.5em;
+}
+#reg-div{
+	display: none;
+	margin: 0;
+}
+.switch-log-reg{
+	float: right;
+	font-size: 0.8em;
+	margin-top: 0.6em;
+	color: lightblue;
+}
+
+#search-div{
+	vertical-align: top;
+	padding-top: 334%;
+}
+#search-div input{
+	width: 100%;
+	height: 2em;
+	border-radius: 1em;
+}

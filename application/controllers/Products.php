@@ -8,6 +8,10 @@ Class Products extends CI_Controller{
 	function index(){
 		$this->load->view('user/welcome');
 	}
+	function to_home(){
+		$data['search'] = 'user_to_home';
+		$this->load->view('user/all_products', $data);
+	}
 	function new_search($search = null){
 		if($search){
 			$sp_search = str_replace('%20', " ", $search);
@@ -21,21 +25,21 @@ Class Products extends CI_Controller{
 		$data['album_id'] = $id;
 		$this->load->view('user/show_product', $data);
 	}
-	function add_to_cart($id, $name, $artist, $price, $qty){
+	function add_to_cart(){
 		$product_exists = false;
-		$sp_name = str_replace('%20', " ", $name);
-		$sp_artist = str_replace('%20', " ", $artist);
 		$productArray = [
-			'id' => $id,
-			'name' => $sp_name,
-			'artist' => $sp_artist,
-			'price' => $price,
-			'qty' => $qty
+			'id' => $this->input->post('id'),
+			'name' => $this->input->post('name'),
+			'artist' => $this->input->post('name'),
+			'price' => $this->input->post('price'),
+			'qty' => $this->input->post('qty')
 			];
+
+			$newProduct['ahd'] = 
 		$cartArray = $this->session->userdata('cart');
 		foreach ($cartArray as &$cartProduct){
-			if($id == $cartProduct['id']){
-				$cartProduct['qty'] += $qty;
+			if($productArray['id'] == $cartProduct['id']){
+				$cartProduct['qty'] += $productArray['qty'];
 				$product_exists = true;
 				break;
 			}
@@ -45,7 +49,7 @@ Class Products extends CI_Controller{
 		}
 		$this->session->set_userdata('cart', $cartArray);
 		$cartCount = $this->session->userdata('cart_count');
-		$this->session->set_userdata('cart_count', ($cartCount + $qty));
+		$this->session->set_userdata('cart_count', ($cartCount + $productArray['qty']));
 		$this->load->view('/partials/header');
 	}
 	function to_cart(){

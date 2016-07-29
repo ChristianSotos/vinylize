@@ -1,7 +1,13 @@
+body{
+	background-color: black;
+	color: white;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
 #show-album{
 	display: inline-block;
 	width: 75%;
 	vertical-align: top;
+	margin-left: 2%;
 }
 #album-player-art{
 	display: inline-block;
@@ -31,6 +37,7 @@ iframe{
 	width: 45%;
 	vertical-align: top;
 	margin-top: 0;
+	margin-left: 2%;
 }
 #player-div h1, h2, h4{
 	margin: 0;
@@ -41,6 +48,7 @@ iframe{
 }
 #tracklist{
 	padding-left: 0;
+	overflow: scroll;
 }
 #tracklist li{
 	display: block;
@@ -54,7 +62,7 @@ iframe{
 	display: inline-block;
 	width: 20%;
 	margin: 0;
-	margin-right: 4%;
+	margin-right: 2%;
 	text-align: center;
 	float: right;
 }
@@ -68,7 +76,8 @@ iframe{
 #side-content img{
 	display: inline-block;
 	margin: 2%;
-	width: 60%;
+	width: 70%;
+	border-radius: 100%;
 }
 .related-artists{
 	margin-bottom: 5%;
@@ -100,6 +109,7 @@ iframe{
 	display: inline-block;
 	margin: 2%;
 	width: 100%;
+	border-radius: 1em;
 }
 
 

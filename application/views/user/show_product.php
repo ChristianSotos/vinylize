@@ -8,13 +8,10 @@
 		//add to cart
 		$('#buy-btn').click(function(){
 			album_info['qty'] = $('#qty').val();
-			console.log(album_info);
-			var src = '/products/add_to_cart/'+album_info['id']+'/'+album_info['name']+'/'+album_info['artist']+'/'+album_info['price']+'/'+album_info['qty'];
-			$.get(src, function(res){
-				$('#header').html(res);
+			$.post('/products/add_to_cart', album_info, function(res){
+				$('#header-div').html(res);
 			})
 		})
-
 
 		//load and append album data
 		var album_info = {};
@@ -53,7 +50,7 @@
 				$.get(related_artist_src, function(res){
 					//console.log(res);
 					$('#side-content').append('<h3>Related Artists</h3>')
-					for(var i=0 ; i<4 ; i++){
+					for(var i=0 ; i<3 ; i++){
 						artist_src = res.artists[i].href;
 						$.get(artist_src,function(res){
 							//console.log(res);
@@ -61,7 +58,9 @@
 							for (var i=0 ; i< res.name.length ; i++){
 								if (res.name[i] == '$'){
 									new_name += 'S';
-								} else{
+								} else if (res.name[i] == ','){
+
+								}else{
 									new_name += res.name[i];
 								}
 							} 	
@@ -79,18 +78,20 @@
 						type: 'album'
 					}, 
 					success: function(serverData){
-						console.log(serverData);
+						
 						$('#bottom-content').append('<h3>Other Albums By This Artist</h3>');
-						for(var i=3 ; i < 8 ; i++){
+						for(var i=0, count=0; count < 5 && i < 20 ; i++){
+							var count = 0;
 							var src = serverData.albums.items[i].href;
 							$.get(src, function(res){
-								console.log(res);
 								if (res.id == album_info['id'] || res.artists[0].id != artist_id){
-									i--;
+									i --;
 								} else{
 									$('#bottom-content').append("<div class='other-albums'><a href='/products/show_product/"+res.id+"'><img src='"+res.images[0].url+"' id='"+res.id+"'></a><p>"+res.name+"</p></div>");
+									add_to_count();
 								}
 							})
+							console.log(count);
 						}
 					}//success function
 				})//end other albums
@@ -102,8 +103,8 @@
 	</script>
 </head>
 <body>
-<div id='header'>
-<?php 	$this->load->view('partials/header'); 	?>
+<div id='header-div'>
+	<?php 	$this->load->view('partials/header'); 	?>
 </div>
 <div class='container'>
 	<div id='show-album'>

@@ -1,7 +1,7 @@
 <?php
 Class User extends CI_Model{
 	function register($new_user){
-		$query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (?,?,?,?,NOW(),NOW())";
+		$query = "INSERT INTO users (first_name, last_name, email, password, admin_level, created_at, updated_at) VALUES (?,?,?,?,0,NOW(),NOW())";
 		$values = [$new_user['first_name'], $new_user['last_name'], $new_user['email'], $new_user['password']];
 		return $this->db->query($query, $values);
 	}

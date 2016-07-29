@@ -63,9 +63,22 @@ Class Orders extends CI_Controller{
 		$this->order->change_orders_ship_status($data);
 		redirect('/orders');
 	}
+	function add_shipping(){
+		$shipping_info = [
+			'address' => $this->input->post('address'),
+			'city' => $this->input->post('city'),
+			'state' => $this->input->post('state'),
+			'zipcode' => $this->input->post('zipcode')
+		];
+		$this->session->set_userdata('ship_info', $shipping_info);
+		$this->load->view('/partials/stripe');
 
+	}
 	function add_order(){
-		
+		$user_id = $this->session->userdata('id');
+		$ship_info = $this->session->userdata('ship_info');
+		$cart = $this->session->userdata('cart');
+		$this->order->add_order($user_id, $ship_info, $cart);
 	}
 }
 ?>

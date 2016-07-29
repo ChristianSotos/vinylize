@@ -8,7 +8,7 @@ Class Users extends CI_Controller{
 	function index(){
 		$this->session->set_userdata('cart', array());
 		$this->session->set_userdata('cart_count', 0);
-		$this->load->view('/user/login');
+		$this->load->view('/user/welcome');
 	}
 	function log_reg(){
 		if($this->input->post('action') == 'login'){
@@ -32,7 +32,7 @@ Class Users extends CI_Controller{
 			$this->session->set_userdata('LOGGED_IN', TRUE);
 			$this->session->set_userdata('cart', array());
 			$this->session->set_userdata('cart_count', 0);
-			redirect('/products');
+			$this->load->view('partials/initial_search');
 		}
 		if($this->input->post('action') == 'register'){
 			//BEGIN VALIDATION CHECK
@@ -61,11 +61,13 @@ Class Users extends CI_Controller{
 			$this->session->set_userdata('LOGGED_IN', TRUE);
 			$this->session->set_userdata('cart', array());
 			$this->session->set_userdata('cart_count', 0);
-			redirect('/products');
+			$this->load->view('partials/initial_search');
 		}
 
 	}
-	function register(){
+	function logout(){
+		$this->session->sess_destroy();
+		redirect('/users');
 	}
 }
 ?>
