@@ -30,7 +30,7 @@ Class Products extends CI_Controller{
 		$productArray = [
 			'id' => $this->input->post('id'),
 			'name' => $this->input->post('name'),
-			'artist' => $this->input->post('name'),
+			'artist' => $this->input->post('artist'),
 			'price' => $this->input->post('price'),
 			'qty' => $this->input->post('qty')
 			];

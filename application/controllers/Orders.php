@@ -1,6 +1,5 @@
 <?php
 Class Orders extends CI_Controller{
-
 	function __construct(){
 		parent::__construct();
 		$this->load->model('user');
@@ -69,7 +68,8 @@ Class Orders extends CI_Controller{
 		$this->order->change_orders_ship_status($data);
 		redirect('/orders');
 	}
-	function add_shipping(){
+
+	function add_ship(){
 		$shipping_info = [
 			'address' => $this->input->post('address'),
 			'city' => $this->input->post('city'),
@@ -78,8 +78,8 @@ Class Orders extends CI_Controller{
 		];
 		$this->session->set_userdata('ship_info', $shipping_info);
 		$this->load->view('/partials/stripe');
-
 	}
+
 	function add_order(){
 		$user_id = $this->session->userdata('id');
 		$ship_info = $this->session->userdata('ship_info');

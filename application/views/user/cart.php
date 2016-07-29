@@ -6,8 +6,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
-		$('#shipping-form').submit(function(){
-			$.post('/orders/add_shipping', $(this).serialize(), function(res){
+		$(document).on('submit', '#shipping-form', function(){
+			$.post('/orders/add_ship', $(this).serialize(), function(res){
+				console.log('submitted');
 				$('#shipping-div').fadeOut();
 				$('#stripe-div').html(res);
 			})
@@ -42,7 +43,7 @@
 					<td><?=$album['qty']?></td>
 					<td>$<?=($album['price']*$album['qty'])?>.00</td>
 				</tr>
-				
+
 <?php 	$sum +=	($album['price']*$album['qty']); 	?>
 
 <?php 	}	?>
@@ -59,7 +60,7 @@
 	</div>
 	<div id='payment-div'>
 		<div id='shipping-div' class='ship-stripe'>
-			<form action='/orders/add_shipping' method='post' id='shipping-form'>
+			<form action='/orders/add_ship' method='post' id='shipping-form'>
 				<p>Address: <input type='text' name='address'></p>
 				<p>City: <input type='text' name='city'></p>
 				<p>State: <input type='text' name='state' maxlength="2"></p>

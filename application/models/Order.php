@@ -114,7 +114,7 @@ Class Order extends CI_Model{
 				WHERE orders.id = ".$data['id']." GROUP BY products.id";
 				return $this->db->query($query)->result_array();
 
-		}
+	}
 		public function get_info($data)
 		{
 			$query = "SELECT orders.id 'order_id',
@@ -140,7 +140,7 @@ Class Order extends CI_Model{
 					JOIN ship_status ON ship_status.id = orders.ship_status_id
 					WHERE orders.id = ".$data['id'];
 					return $this->db->query($query)->row_array();
-			}
-	}
+		}
 }
+
 ?>
