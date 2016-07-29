@@ -1,7 +1,8 @@
 body{
-	background-color: black;
 	color: white;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	background: linear-gradient(to right, black, dimgrey);
+	background-size: cover;
 }
 #main-content{
 	width: 75%;
@@ -9,7 +10,9 @@ body{
 	padding: 0;
 	display: inline-block;
 	vertical-align: top;
-	border: 1px solid black;
+}
+#main-content h1{
+	text-align: center;
 }
 #search-bar{
 	float: left;
@@ -65,7 +68,7 @@ form input{
 	width: 20%;
 	margin: 1%;
 	text-align: center;
-	border: 1px solid black;
+
 }
 #side-content h3{
 	margin-top: 0;

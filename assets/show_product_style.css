@@ -1,5 +1,5 @@
 body{
-	background-color: black;
+	background: linear-gradient(to right, black, dimgrey);
 	color: white;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
@@ -100,9 +100,11 @@ iframe{
 	margin-top: 3%;
 }
 #bottom-content p{
+	font-size: 0.8em;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+	white-space: nowrap;
 	text-overflow: ellipsis;
 }
 #bottom-content img{
