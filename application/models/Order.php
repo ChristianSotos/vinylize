@@ -82,7 +82,7 @@ Class Order extends CI_Model{
 			} else{
 				$product_id = $unique_check['id'];
 			}
-
+			
 			$op_query = "INSERT INTO order_products (order_id, product_id) VALUES (?,?)";
 			$op_values = array($order_id, $product_id);
 			$this->db->query($op_query, $op_values);

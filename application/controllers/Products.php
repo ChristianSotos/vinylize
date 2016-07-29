@@ -58,7 +58,16 @@ Class Products extends CI_Controller{
 	}
 
 	function admin_dashboard(){
-		$this->load->view('/admin/dashboard_products');
+		$this->session->set_userdata('page_number', 0);
+		if ($this->session->userdata('admin_level') == 9) {
+			$this->load->view('/admin/dashboard_products');
+		}
+		elseif ($this->session->userdata('admin_level') == 0) {
+			redirect('/products/to_home');
+		}
+		else {
+			redirect('/users');
+		}	
 	}
 
 	function get_all_products($page, $search=null){
@@ -68,6 +77,15 @@ Class Products extends CI_Controller{
 		}
 		else {
 			$data['search'] = $search;
+		}
+
+		//compare $page to page number in session
+		if ($page == 0) {
+			$this->session->set_userdata('page_number', 0);
+		}
+		else {
+			$new_page_number = $page / 5;
+			$this->session->set_userdata('page_number', $new_page_number);
 		}
 		$data['page_number'] = $page;
 		$products = $this->product->get_all_products($data);
