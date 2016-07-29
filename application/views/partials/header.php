@@ -1,15 +1,13 @@
+<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
 <style>
 	#header{
-		background-color: black;
-		background: linear-gradient(to left, black, dimgrey);
-		color: white;
 		list-style-type: none;
 		padding: 1%;
-		border: 3px groove silver;
-		border-radius: 1em;
 		text-align: right;
 		position: static;
 		top: 0;
+		margin: 0;
+		padding: 2%;
 	}
 	#header li{
 		display: inline-block;
@@ -22,6 +20,9 @@
 		float: left;
 	}
 	#vin-name h3{
+		font: 400 100px/1.3 'Arizonia', Helvetica, sans-serif;
+		font-size: 2em;
+		line-height: 0.5em;
 		margin: 0;
 	}
 </style>

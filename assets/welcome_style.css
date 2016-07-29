@@ -17,10 +17,15 @@ body{
 	height: 100%;
 }
 #login-div{
-	padding-top: 190%;
+	position: relative;
+	top: 43%;
+	margin: 0 auto;
+	/*padding-top: 190%;*/
 }
 #reg-div{
-	padding-top: 160%;
+	position: relative;
+	top: 35%;
+	margin: 0 auto;
 }
 
 #login-div, #reg-div{
@@ -55,11 +60,14 @@ button{
 }
 
 #search-div{
+	position: relative;
+	top: 46%;
+	margin: 0 auto;
 	vertical-align: top;
-	padding-top: 334%;
 }
 #search-div input{
 	width: 100%;
+	height: 2em;
 	height: 2em;
 	border-radius: 1em;
 }

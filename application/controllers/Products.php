@@ -9,7 +9,7 @@ Class Products extends CI_Controller{
 		$this->load->view('user/welcome');
 	}
 	function to_home(){
-		$data['search'] = 'user_to_home';
+		$data['search'] = $this->session->userdata('current_search');
 		$this->load->view('user/all_products', $data);
 	}
 	function new_search($search = null){
@@ -20,6 +20,11 @@ Class Products extends CI_Controller{
 			$data['search'] = $this->input->post('search');
 		}
 		$this->load->view('user/all_products', $data);
+	}
+	function set_search(){
+		$current_search = $this->input->post('search');
+		$this->session->set_userdata('current_search', $current_search);
+		return $this->session->userdata('current_search');
 	}
 	function show_product($id){
 		$data['album_id'] = $id;

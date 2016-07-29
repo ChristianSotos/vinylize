@@ -5,7 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="/assets/all_products_style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script>
-	var new_to_page = true;
 	$(document).ready(function(){
 		new_to_page();
 		
@@ -30,20 +29,11 @@
 		})
 		//signal initial search
 		function new_to_page(){
-			if ('<?=$search?>' == 'user_to_home'){
-				to_home();
-			}else{
-				var search = '<?=$search?>';
-				console.log(search);
-				$('#current-search').val(search);
-				var page = 0;
-				search_album(search, page);
-			}
-		}
-
-		function to_home(){
-			$('#main-content').html("<h1>SEARCH SOMETHING DUDE</h1>");
-			$('#side-content').html("");
+			var search = '<?=$search?>';
+			console.log(search);
+			$('#current-search').val(search);
+			var page = 0;
+			search_album(search, page);
 		}
 		
 		//signal new search
@@ -125,6 +115,8 @@
 		
 		//main search function
 		function search_album(search, page_offset){
+			var current_search = {'search':search};
+			$.post('/products/set_search', current_search, function(res){});
 			page_offset *= 12;
 			console.log(search);
 			console.log(page_offset);
@@ -176,25 +168,26 @@
 	</script>
 </head>
 <body>
-<?php 	$this->load->view('partials/header'); 	?>
 <div class='container'>
+<div id='header-div'>
+<?php 	$this->load->view('partials/header'); 	?>
+</div>
+	<div id='side-content'>
+	</div>
 
 	<div id='page-search'>
 		<form action='' method='post' id='search-bar'>
-			<p>Album: <input type='text' name='album_search'></p>
-			<p>Artist: <input type='text' name='artist_search'></p>
+			<p><input type='text' name='album_search' placeholder='Search for yo shit...'></p>
 			<input type='hidden' name='current_search' id='current-search' value=''>
 		</form>
-
-		<h4 id='page-back'> <-- </h4>
-		<h4 id='page-num'>1</h4>
-		<h4 id='page-forward'> --> </h4>
+		<div id='page-bar'>
+			<h4 id='page-back'> <-- </h4>
+			<h4 id='page-num'>1</h4>
+			<h4 id='page-forward'> --> </h4>
+		</div>
 	</div>
 	
 	<div id='main-content'>
-	</div>
-
-	<div id='side-content'>
 	</div>
 </div>
 </body>

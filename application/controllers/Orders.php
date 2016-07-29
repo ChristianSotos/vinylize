@@ -85,6 +85,9 @@ Class Orders extends CI_Controller{
 		$ship_info = $this->session->userdata('ship_info');
 		$cart = $this->session->userdata('cart');
 		$this->order->add_order($user_id, $ship_info, $cart);
+		$this->session->set_userdata('cart', array());
+		$this->session->set_userdata('cart_count', 0);
+		$this->load->view('/user/all_products');
 	}
 
 
