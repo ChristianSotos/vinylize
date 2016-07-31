@@ -1,5 +1,5 @@
 body{
-	color: white;
+	color: lightgrey;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 	/*background: linear-gradient(to right, black, dimgrey);*/
 	background-color: rgb(18,18,18);
@@ -11,7 +11,6 @@ body{
 	margin-top: -1%;
 	width: 100%;
 	background-color: rgb(40,40,42);
-	/*border-bottom: 1px ridge white;*/
 }
 #main-content{
 	width: 78%;
@@ -20,8 +19,9 @@ body{
 	padding: 0;
 	display: inline-block;
 	vertical-align: top;
+	color: lightgrey;
 }
-#main-content h1{
+#main-content h4{
 	text-align: center;
 }
 #search-bar{
@@ -35,8 +35,13 @@ form p{
 }
 form input{
 	border: 2px groove silver;
-	border-radius: 10px;
+	border-radius: 2em;
 	width: 20em;
+	height: 3em;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 0;
+	text-align: center;
 }
 #page-bar{
 	margin-right: 5%;
@@ -50,6 +55,9 @@ form input{
 	display: inline-block;
 	margin: 0;
 	margin-left: 2%;
+}
+#page-search h4:hover{
+	text-shadow: 0 0 1em white;
 }
 .albums{
 	display: inline-block;
@@ -82,15 +90,15 @@ form input{
 #side-content{
 	display: inline-block;
 	background-color: rgb(40,40,42);
-	/*margin-left: -0.5%;*/
 	width: 22%;
 	text-align: center;
 	float: right;
-	height: 150%em;
 	padding-top: 2%;
+	color: lightgrey;
 
 }
 #side-content h3{
+	font-style: italic;
 	margin-top: 10%;
 	margin-bottom: 20%;
 }
@@ -108,4 +116,8 @@ form input{
 }
 .related-artists{
 	margin-bottom: 5%;
+}
+#side-content img:hover{
+	width:75%;
+	border: 1px solid white;
 }

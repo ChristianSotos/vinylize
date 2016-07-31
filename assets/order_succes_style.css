@@ -1,0 +1,23 @@
+body{
+	background-color: rgb(18,18,18);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	color: lightgrey;
+}
+#header-div{
+	margin-top: -1%;
+	width: 100%;
+	background-color: rgb(40,40,42);
+}
+#container{
+}
+h1{
+	text-align: center;
+	font-size: 5em;
+}
+h4{
+	text-align: center;
+}
+img{
+	display: block;
+	margin: 0 auto;
+}

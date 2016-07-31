@@ -8,7 +8,16 @@ Class Orders extends CI_Controller{
 	}
 	function index(){
 		$this->session->set_userdata('page_number', 0);
-		$this->load->view('/admin/dashboard_orders');
+
+		if ($this->session->userdata('admin_level') == 9) {
+			$this->load->view('/admin/dashboard_orders');
+		}
+		elseif ($this->session->userdata('admin_level') == 0) {
+			redirect('/products/to_home');
+		}
+		else {
+			redirect('/users');
+		}	
 	}
 
 	function get_all_orders($page, $ship_status=null, $search=null){
@@ -87,7 +96,7 @@ Class Orders extends CI_Controller{
 		$this->order->add_order($user_id, $ship_info, $cart);
 		$this->session->set_userdata('cart', array());
 		$this->session->set_userdata('cart_count', 0);
-		$this->load->view('/user/all_products');
+		$this->load->view('user/order_success');
 	}
 
 
@@ -101,7 +110,15 @@ Class Orders extends CI_Controller{
 			'order'=> $order,
 			'info'=>$info
 		);
-		$this->load->view("/admin/show_product", $data);
+		if ($this->session->userdata('admin_level') == 9) {
+			$this->load->view("/admin/show_product", $data);
+		}
+		elseif ($this->session->userdata('admin_level') == 0) {
+			redirect('/products/to_home');
+		}
+		else {
+			redirect('/users');
+		}	
 	}
 }
 ?>

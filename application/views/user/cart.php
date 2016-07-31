@@ -8,21 +8,32 @@
 	$(document).ready(function(){
 		$(document).on('submit', '#shipping-form', function(){
 			$.post('/orders/add_ship', $(this).serialize(), function(res){
-				console.log('submitted');
-				$('#shipping-div').fadeOut();
-				$('#stripe-div').html(res);
+				$('#shipping-div').fadeOut(500, 'linear', function(){
+					setTimeout(function(){
+						$('#stripe-div').html(res);
+						$('#stripe-div').fadeIn(1000);
+					},500);
+				})
 			})
 			return false;
+		})
+		$(document).on('click', '#start-btn', function(){
+			$('#start-btn').fadeOut(500, 'linear', function(){
+				setTimeout(function(){
+					$('#shipping-div').fadeIn(1000);
+				},500);
+			})
 		})
 		
 	})
 	</script>
 </head>
 <body>
+	<div id='header-div'>
 <?php 	$this->load->view('partials/header'); 	
 		$sum = 0;
 ?>
-
+</div>
 <div class='container'>
 
 	<div id='cart-div'>
@@ -60,6 +71,7 @@
 		</table>
 	</div>
 	<div id='payment-div'>
+		<button id='start-btn'>Vinylize Your Order</button>
 		<div id='shipping-div' class='ship-stripe'>
 			<form action='/orders/add_ship' method='post' id='shipping-form'>
 				<p>Address: <input type='text' name='address'></p>

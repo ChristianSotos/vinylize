@@ -25,8 +25,11 @@
 	<li>First</li>
 	<li>Back</li>
 <?php for ($i=($this->session->userdata('page_number')+1); $i <= ($this->session->userdata('page_number')+5); $i++) {
-?>	
-	<li><?=$i?></li>
+?>
+	<li <?php if ($i == $this->session->userdata('page_number')+1) {
+		echo "class= 'bold'";
+	} ?>
+	><?=$i?></li>
 <?php  
 	}
 ?>

@@ -20,7 +20,6 @@
 				}
 			});
 		});
-
 		$(document).on('change', '#ship_status_all', function(){
 			var page = $('#current_page_number').val();
 			var search = $('#search_bar').val();

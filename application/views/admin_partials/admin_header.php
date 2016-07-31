@@ -24,10 +24,14 @@
 		text-align: right;
 		text-decoration: none;
 	}
+	.bold {
+		font-weight: bold;
+	}
 </style>
+
 <div id="header">
 	<h1>admin dashboard</h1>
-	<h2><a href="/orders">orders</a></h2>
-	<h2><a href="/products/admin_dashboard">products</a></h2>
+	<h2><a id="orders_link" href="/orders">orders</a></h2>
+	<h2><a id="products_link" href="/products/admin_dashboard">products</a></h2>
 	<h2><a href="/users/logout">log off</a></h2>
 </div>

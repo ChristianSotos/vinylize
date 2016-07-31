@@ -29,7 +29,10 @@
 		})
 		//signal initial search
 		function new_to_page(){
-			var search = '<?=$search?>';
+			var search = "<?=$this->session->userdata('current_search')?>";
+			if (!search){
+				search = "<?=$search?>";
+			}
 			console.log(search);
 			$('#current-search').val(search);
 			var page = 0;
@@ -115,8 +118,12 @@
 		
 		//main search function
 		function search_album(search, page_offset){
-			var current_search = {'search':search};
-			$.post('/products/set_search', current_search, function(res){});
+			if(search === ""){
+				search = "<?=$this->session->userdata('current_search')?>";
+			}else{
+				var current_search = {'search':search};
+				$.post('/products/set_search', current_search, function(res){});
+			}
 			page_offset *= 12;
 			console.log(search);
 			console.log(page_offset);
@@ -177,7 +184,7 @@
 
 	<div id='page-search'>
 		<form action='' method='post' id='search-bar'>
-			<p><input type='text' name='album_search' placeholder='Search for yo shit...'></p>
+			<p><input type='text' name='album_search' placeholder='Search for an Album or Artist'></p>
 			<input type='hidden' name='current_search' id='current-search' value=''>
 		</form>
 		<div id='page-bar'>

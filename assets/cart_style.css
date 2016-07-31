@@ -1,24 +1,59 @@
 body{
-	background-color: black;
-	color: white;
+	color: lightgrey;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	background-color: rgb(18,18,18);
 	text-align: center;
 }
+#header-div{
+	margin-top: -1%;
+	width: 100%;
+	background-color: rgb(40,40,42);
+}
 #cart-div table{
-	border: 4px outset silver;
+	border: 3px solid rgb(50,50,50);
 	margin: 0 auto;
+	margin-top: 1em;
 	border-collapse: collapse;
-	text-align: center
 }
 #cart-div td, th{
+	text-align: left;
 	border: 1px groove white;
-	padding: 1em;
+	padding: 0.7em;
+}
+#start-btn, #ship-btn{
+	color: lightgrey;
+	width: 150%;
+	margin: 0;
+	margin-left: -25%;
+	height: 3em;
+	border: 4px groove silver;
+	border-radius: 2em;
+	background: linear-gradient(rgb(18,18,18), rgb(42,42,40));
+}
+#start-btn:hover, #ship-btn:hover{
+	cursor: pointer;
+	border: 4px groove white;
+	height: 3.5em;
+}
+#start-btn:hover{
+	width: 160%;
+	margin-left: -30%;
+}
+#ship-btn{
+	margin: 0 auto;
+	display: block;
+	width: 75%;
+}
+#ship-btn:hover{
+	width: 80%;
 }
 #payment-div{
 	display: inline-block;
-	margin: 5% auto;
+	margin: 2% auto;
 }
 #shipping-div{
+	color: lightgrey;
+	display: none;
 	padding: 2em;
 	border: 6px double silver;
 	border-radius: 4em;
@@ -28,6 +63,7 @@ body{
 	margin-left: 1em;
 }
 tr:nth-child(even){
+	color: white;
 	background-color: grey;
 }
 tr:nth-child(odd){
@@ -36,10 +72,10 @@ tr:nth-child(odd){
 }
 th{
 	color: white;
+	font-size: 1em; 
 	background-color: dimgrey;
 }
 tfoot td{
-	border: none;
 	color: black;
 	background-color: lightgrey;
 
