@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost:8888/';
-$config['base_url'] = 'http://ec2-52-42-248-209.us-west-2.compute.amazonaws.com/';
+$config['base_url'] = 'https://ec2-52-42-248-209.us-west-2.compute.amazonaws.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ $config['base_url'] = 'http://ec2-52-42-248-209.us-west-2.compute.amazonaws.com/
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
