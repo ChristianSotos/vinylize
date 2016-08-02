@@ -83,4 +83,10 @@ th, td {
 .bold {
 	font-weight: bolder;
 }
+@media all and (max-width:750px){
+	body, table{ 
+		font-size: 0.7em;
+		padding: 5px; 
+		overflow: scroll; }
+}
 

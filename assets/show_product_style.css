@@ -50,6 +50,8 @@ iframe{
 }
 #buy-div{
 	float: right;
+	width: 20%;
+	text-align: center;
 }
 #tracklist{
 	padding-left: 0;
@@ -60,6 +62,18 @@ iframe{
 #tracklist h4{
 	display: inline-block;
 	margin: 0 1%;
+}
+#buy-btn{
+	height: 2em;
+	text-align: center;
+	border: 1px groove silver;
+	border-radius: 1em;
+	background-color: rgb(40,40,42);
+	color: lightgrey;
+}
+#buy-btn:hover{
+	border: 1px groove white;
+	color: white;
 }
 
 #side-content{
