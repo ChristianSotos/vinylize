@@ -71,7 +71,8 @@ Class Users extends CI_Controller{
 	}
 	
 	function logout(){
-		$this->session->sess_destroy();
+		$this->clear_cache();
+		$this->session->sess_destroy();	
 		redirect('/users');
 	}
 }

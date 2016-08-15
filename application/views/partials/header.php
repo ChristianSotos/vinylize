@@ -46,6 +46,9 @@
 <ul id='header'>
 	<li id='vin-name'><h3>vinylize</h3></li>
 	<li id='vin-tag'><h4>World's Largest Vinyl Collection</h4></li>
+<?   if ($this->session->userdata('admin_level') == 9) { ?>
+	<li><a href="/orders">admin dash</a></li> 
+<?   } ?>
 	<li><a href='/products/to_home'>home</a></li>
 	<li><a href='/users/logout'>logout</a></li>
 	<li id='cart-count'><a href='/products/to_cart'>cart <?=$this->session->userdata('cart_count')?></a></li>

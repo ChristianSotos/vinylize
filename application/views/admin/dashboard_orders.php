@@ -11,13 +11,8 @@
 			$('#current_page_number').val(0);
 			var page = $('#current_page_number').val();
 			var url = "/orders/get_all_orders/"+page+"/"+ship_status+"/"+search;
-			console.log(url);
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
 			});
 		});
 		$(document).on('change', '#ship_status_all', function(){
@@ -25,13 +20,9 @@
 			var search = $('#search_bar').val();
 			var ship_status = $('#ship_status_all').val();
 			var url = "/orders/get_all_orders/"+page+"/"+ship_status+"/"+search;
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
-			})
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
+			});
 		});
 
 		$(document).on('change', '#search_bar', function(){
@@ -40,13 +31,9 @@
 			var ship_status = $('#ship_status_all').val();
 			var url = "/orders/get_all_orders/"+page+"/"+ship_status+"/"+search;
 			console.log(url);
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
-			})
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
+			});
 		});
 
 		$(document).on('submit', 'form', function(){
@@ -79,13 +66,9 @@
 			var search = $('#search_bar').val();
 			var ship_status = $('#ship_status_all').val();
 			var url = "/orders/get_all_orders/"+page+"/"+ship_status+"/"+search;
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
-			})
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
+			});
 		});
 
 		$(document).on('change', '.select_ship_status', function(){

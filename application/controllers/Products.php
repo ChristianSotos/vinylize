@@ -77,12 +77,14 @@ Class Products extends CI_Controller{
 	}
 
 	function get_all_products($page, $search=null){
+		
 
 		if ($search == "") {
 			$data['search'] = null;
 		}
 		else {
-			$data['search'] = $search;
+			$sp_search = str_replace('%20', " ", $search);
+			$data['search'] = $sp_search;
 		}
 
 		//compare $page to page number in session

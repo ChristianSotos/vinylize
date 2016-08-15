@@ -28,7 +28,8 @@ Class Orders extends CI_Controller{
 			$data['search'] = null;
 		}
 		else {
-			$data['search'] = $search;
+			$sp_search = str_replace('%20', " ", $search);
+			$data['search'] = $sp_search;
 		}
 
 		if ($ship_status == 'Show%20All') {
@@ -105,7 +106,6 @@ Class Orders extends CI_Controller{
 		$data['id'] = $id;
 		$order = $this->order->get_order($data);
 		$info = $this->order->get_info($data);
-		// var_dump($order); die();
 		$data = array(
 			'order'=> $order,
 			'info'=>$info

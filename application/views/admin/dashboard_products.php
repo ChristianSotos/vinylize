@@ -11,12 +11,8 @@
 			var page = $('#current_page_number').val();
 			var url = "/products/get_all_products/"+page;
 			console.log(url);
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
 			});
 		});
 
@@ -49,13 +45,9 @@
 			var search = $('#search_bar').val();
 			var ship_status = $('#ship_status_all').val();
 			var url = "/products/get_all_products/"+page;
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
-			})
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
+			});
 		});
 
 		$(document).on('submit', 'form', function(){
@@ -67,13 +59,9 @@
 			var search = $('#search_bar').val();
 			var url = "/products/get_all_products/"+page+"/"+search;
 			console.log(url);
-			$.ajax({
-				url: url,
-				type: "GET",
-				success: function(res) {
-					$('#orders').html(res);
-				}
-			})
+			$.get(url, $(this).serialize(), function(res) {
+				$('#orders').html(res);
+			});
 		});
 
 
